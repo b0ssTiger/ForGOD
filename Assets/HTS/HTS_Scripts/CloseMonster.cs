@@ -11,9 +11,11 @@ public class CloseMonster : MonoBehaviour
     GameObject player;
     private Camera mainCamera;
     public float followDistance;
+    
 
     void Start()
     {
+        
         mainCamera = Camera.main; // 메인 카메라에 대한 참조를 가져오는 코드
         currentHp = maxHp;
         player = GameObject.Find("Player");
