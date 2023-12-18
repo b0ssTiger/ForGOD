@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0da7da5249e2142884faf2ba760c67, type: 3}
+  m_Name: ItemSeveralDrop(chest)
+  m_EditorClassIdentifier: 
+  items:
+  - item: {fileID: 11400000, guid: e58fac2fa56aad144ba611b4da6d4fa0, type: 2}
+    weight: 50
+  - item: {fileID: 11400000, guid: 00f62d05caae5d54a814cc3065fdee80, type: 2}
+    weight: 50
