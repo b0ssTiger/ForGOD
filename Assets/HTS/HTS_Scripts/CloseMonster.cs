@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class CloseMonster : MonoBehaviour
@@ -11,7 +12,9 @@ public class CloseMonster : MonoBehaviour
     GameObject player;
     private Camera mainCamera;
     public float followDistance;
-    
+    private Slider hpbar;
+    public float hpbardistance;
+
 
     void Start()
     {
@@ -19,10 +22,16 @@ public class CloseMonster : MonoBehaviour
         mainCamera = Camera.main; // 메인 카메라에 대한 참조를 가져오는 코드
         currentHp = maxHp;
         player = GameObject.Find("Player");
+        hpbar = GetComponentInChildren<Slider>();
+        hpbar.maxValue = maxHp;
+        hpbar.value = maxHp;
     }
     void Update()
     {
-        MonsterMove();       
+        MonsterMove();
+        UpdateHealthBarPosition();
+
+
     }
 
     public void Move(Transform player)
@@ -35,7 +44,8 @@ public class CloseMonster : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHp -= damage;
-        
+        hpbar.value = currentHp;
+
 
         if (currentHp <= 0)
         {
@@ -77,6 +87,13 @@ public class CloseMonster : MonoBehaviour
            
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
+    }
+
+    void UpdateHealthBarPosition()
+    {
+        // 몬스터의 현재 위치를 기준으로 체력바의 위치를 조절
+        Vector3 healthBarPosition = transform.position + new Vector3(0f, hpbardistance, 0f); // 원하는 위치로 조절
+        hpbar.transform.position = Camera.main.WorldToScreenPoint(healthBarPosition);
     }
 
 
