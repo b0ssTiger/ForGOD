@@ -4297,6 +4297,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5405a82622767144ca35cd89dfdf831d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgSound: {fileID: 1290634503}
+  bgList:
+  - {fileID: 8300000, guid: b04cce568b90de24fa46283f3b209018, type: 3}
+  - {fileID: 8300000, guid: f7f2eb351cc59454b91b8be17e5f4131, type: 3}
+  - {fileID: 8300000, guid: 4096dbf67c35a814d90d4cad41f33825, type: 3}
+  - {fileID: 8300000, guid: 39e4c943ca7cae44289914bf8a7812bb, type: 3}
+  - {fileID: 8300000, guid: d6550f9f25b44ca4784232c95c58ff1e, type: 3}
 --- !u!1 &1323326390
 GameObject:
   m_ObjectHideFlags: 0
