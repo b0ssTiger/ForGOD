@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e885c069c5c13e4f843bff99d5d555f, type: 3}
+  m_Name: Force Potion
+  m_EditorClassIdentifier: 
+  itemName: Force Potion
+  stats:
+  - name: ATK
+    value: 1
+  Equip: 0
+  maxStack: 3
+  minLevel: 2
+  icon: {fileID: -1910414731, guid: ba00d2cc9cfe3aa4dbabe584112b29a8, type: 3}
+  prefab: {fileID: 3402499898673303494, guid: 52bc9152deb0db34b808ae6dd32ebd2a, type: 3}
+  itemDescription: "\uBE44\uC0C1\uD558\uAC8C \uC0DD\uAE34 \uC790\uC8FC\uC0C9 \uBB3C\uC57D\uC785\uB2C8\uB2E4.
+    \uB9C8\uC2DC\uBA74 \uACF5\uACA9\uB825\uC774 1 \uC99D\uAC00\uD569\uB2C8\uB2E4."

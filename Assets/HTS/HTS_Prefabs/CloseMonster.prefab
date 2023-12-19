@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1892487826979339009}
   - component: {fileID: 1360054814595306721}
   - component: {fileID: 8288953058982484961}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: skelet
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1529327397757568177}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: OrcWarrior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,7 +456,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7630983621280888965}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CloseMonster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -910,7 +910,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5855481705806176755}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Imp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -947,7 +947,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8823104297948488065}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Skelet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -979,7 +979,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7238384801515740008}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Goblin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1168,7 +1168,7 @@ GameObject:
   - component: {fileID: 3236657538632918679}
   - component: {fileID: 1142277943643260293}
   - component: {fileID: 2164047908964675395}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: imp
   m_TagString: Monster
   m_Icon: {fileID: 0}

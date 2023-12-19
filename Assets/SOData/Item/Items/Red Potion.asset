@@ -16,9 +16,9 @@ MonoBehaviour:
   stats:
   - name: HP
     value: 1
-    Equip: 0
+  Equip: 0
   maxStack: 5
   minLevel: 1
   icon: {fileID: 1926915551, guid: ba00d2cc9cfe3aa4dbabe584112b29a8, type: 3}
   prefab: {fileID: 3402499898673303494, guid: f539633de676b554da664e4cc98bfed8, type: 3}
-  itemDescription: "\uB538\uAE30\uB9DB \uD3EC\uC158 HP 1\uCE78\uC744 \uD68C\uBCF5\uD569\uB2C8\uB2E4."
+  itemDescription: "\uB538\uAE30\uB9DB \uD3EC\uC158 \uCCB4\uB825\uC744 1 \uD68C\uBCF5\uD569\uB2C8\uB2E4."

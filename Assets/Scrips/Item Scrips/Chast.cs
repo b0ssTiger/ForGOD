@@ -15,6 +15,7 @@ public class Chast : MonoBehaviour
     /// <summary>
     /// Player 태그 오브젝트 충돌감지 이후
     /// ItemDropSO에 ItemDrop메소드 를 통해 해당 위치에 랜덤 아이템 인스턴스 생성
+    /// 이후 상자 파괴
     /// </summary>
     public void GetChast()
     {
