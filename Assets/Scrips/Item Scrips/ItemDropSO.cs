@@ -20,10 +20,19 @@ public class ItemDropSO : ScriptableObject
     protected ItemSO PickItem()
     {
         int sum = 0;
+
+        // 꽝 아이템 items[0]은 항상 50%를 유지하게 (필요없다면 밑 35번 줄도 지울것)
+        if (items[0].weight != 0)
+        {
+            items[0].weight = 0;
+        }
+
         foreach (var item in items)
         {
             sum += item.weight; // 리스트의 아이템 개수만큼 weight 값을 sum에 저장
         }
+
+        items[0].weight += sum;
 
         float rnd = UnityEngine.Random.Range(0, sum); // 유니티 엔진 랜덤 + 아이템 확률
 
