@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e885c069c5c13e4f843bff99d5d555f, type: 3}
+  m_Name: FailedItem
+  m_EditorClassIdentifier: 
+  itemName: FailedItem
+  stats: []
+  Equip: 0
+  maxStack: 0
+  minLevel: 0
+  icon: {fileID: -1527437496, guid: ba00d2cc9cfe3aa4dbabe584112b29a8, type: 3}
+  prefab: {fileID: 3402499898673303494, guid: 0fb1542a9c7ada64fb3071591496a66b, type: 3}
+  itemDescription: "\uAF5D"
