@@ -9,8 +9,8 @@ public class PlayerManager : MonoBehaviour
     public Transform ItenPoint;
     public Transform ShotPoint;
     public GameObject ItemPrefab;
-    public GameObject ThrowPrefab;
     public GameObject BowPrefab;
+
     public float Curhp;
 
     Rigidbody2D rb;
@@ -66,11 +66,6 @@ public class PlayerManager : MonoBehaviour
             animator.SetTrigger("Slash");
         }
 
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            animator.SetTrigger("Guard");
-        }
-
         if (Input.GetKeyDown(KeyCode.B))
         {
             animator.SetTrigger("Item");
@@ -95,18 +90,8 @@ public class PlayerManager : MonoBehaviour
     }
     IEnumerator Shot()
     {
+        
         if (Input.GetKeyDown(KeyCode.X))
-        {
-            animator.SetTrigger("Throw");
-            for (var i = 0; i < 30; i++)
-            {
-                
-                yield return null;
-            }
-            Instantiate(ThrowPrefab, Vector2.zero, Quaternion.identity, shotPointTransform);
-        }
-
-        if (Input.GetKeyDown(KeyCode.C))
         {
             animator.SetTrigger("Bow");
             for (var i = 0; i < 40; i++)
