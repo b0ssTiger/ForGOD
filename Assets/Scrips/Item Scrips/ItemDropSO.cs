@@ -10,7 +10,7 @@ public class ItemDropSO : ScriptableObject
     {
         public ItemSO item; // ItemSO 정보를 인스펙터 창에서 할당
         public int weight;
-        // 해당 아이템의 확률
+        // 해당 아이템의 확률 값이 높을수록 확률 증가
         // 예시로 3개의 아이템의 weight값이 1,1,1 이면 33.3% 정도의 확률로 1개 아이템 드랍
     }
 
