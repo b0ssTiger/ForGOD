@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: FailedItem
   stats: []
+  Equip: 0
   maxStack: 0
   minLevel: 0
-  icon: {fileID: 1926915551, guid: ba00d2cc9cfe3aa4dbabe584112b29a8, type: 3}
+  icon: {fileID: -1527437496, guid: ba00d2cc9cfe3aa4dbabe584112b29a8, type: 3}
   prefab: {fileID: 3402499898673303494, guid: 0fb1542a9c7ada64fb3071591496a66b, type: 3}
   itemDescription: "\uAF5D"

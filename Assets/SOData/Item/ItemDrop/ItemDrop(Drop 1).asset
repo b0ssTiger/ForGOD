@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: ItemDrop(Drop 1)
   m_EditorClassIdentifier: 
   items:
-  - item: {fileID: 0}
-    weight: 1
+  - item: {fileID: 11400000, guid: b1d1cb83ce275df4298492ae0d48a9bb, type: 2}
+    weight: 50
   - item: {fileID: 11400000, guid: e58fac2fa56aad144ba611b4da6d4fa0, type: 2}
-    weight: 1
+    weight: 10
   - item: {fileID: 11400000, guid: 00f62d05caae5d54a814cc3065fdee80, type: 2}
-    weight: 1
+    weight: 40

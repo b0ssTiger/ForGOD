@@ -16,7 +16,7 @@ MonoBehaviour:
   stats:
   - name: ATK
     value: 1
-    Equip: 1
+  Equip: 1
   maxStack: 1
   minLevel: 1
   icon: {fileID: -52415830, guid: 83bf93558b0ec514a95bd6edcd67f7ac, type: 3}
