@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.PlayerSettings;
+using static UnityEditor.Progress;
 
 public class BossMonster : MonoBehaviour
 {
@@ -14,7 +17,7 @@ public class BossMonster : MonoBehaviour
     public float hpbardistance;
     public float knockbackForce = 1f;
     private bool isKnockbackInProgress = false;
-
+    [SerializeField] private GameObject prefab;
 
 
 
@@ -50,10 +53,22 @@ public class BossMonster : MonoBehaviour
 
         if (currentHp <= 0)
         {
+            float rnd = Random.Range(0,9);
+            if (rnd >= 0)
+            {
+                ItemChaetDrop(transform.position);
+            }
             Die();
         }
     }
-
+    public void ItemChaetDrop(Vector3 pos)
+    {
+        if (prefab == null)
+        {
+            return;
+        }
+        Instantiate(prefab, pos, Quaternion.identity);
+    }
     public void Die()
     {
         Destroy(gameObject);
