@@ -8,11 +8,8 @@ public class UserData : MonoBehaviour
 {
 
     public UserStat Player_Stats = new UserStat();
-
     public Animator animator;    
     public Image Hpimage;
-
-    public Slider PlayerInterface_Hpbar;
 
     public void Start()
     {
@@ -24,12 +21,8 @@ public class UserData : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(50f);
-        }
-
-        PlayerInterface_Hpbar.value = Player_Stats.Curhp / Player_Stats.Maxhp;
+       
+       
     }
 
     public void Updatehp()
@@ -38,8 +31,16 @@ public class UserData : MonoBehaviour
         Hpimage.fillAmount = fillAmount; 
     }
 
-   
-    public void TakeDamage(float damage)
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Monster")
+        {
+            TakeDamage(10);
+        }
+    }
+
+
+            public void TakeDamage(float damage)
     {
         animator.SetTrigger("Damage");
         Player_Stats.Curhp -= damage;
