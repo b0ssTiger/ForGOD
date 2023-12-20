@@ -8,7 +8,6 @@ public class UserData : MonoBehaviour
 {
 
     public UserStat Player_Stats = new UserStat();
-
     public Animator animator;    
     public Image Hpimage;
 
