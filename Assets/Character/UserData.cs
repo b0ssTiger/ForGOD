@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -56,7 +57,7 @@ public class UserData : MonoBehaviour
     public void UserDie()
     {
         animator.SetTrigger("Dead");
-        // 플레이어 사망 이후 UI 로드 (사망정보창, 부활)
+        SceneManager.LoadScene("FirstGameScene");
     }
 
     public class UserStat
