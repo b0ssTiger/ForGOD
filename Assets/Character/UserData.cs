@@ -12,6 +12,8 @@ public class UserData : MonoBehaviour
     public Animator animator;    
     public Image Hpimage;
 
+    public Slider PlayerInterface_Hpbar;
+
     public void Start()
     {
 
@@ -26,7 +28,8 @@ public class UserData : MonoBehaviour
         {
             TakeDamage(50f);
         }
-       
+
+        PlayerInterface_Hpbar.value = Player_Stats.Curhp / Player_Stats.Maxhp;
     }
 
     public void Updatehp()
