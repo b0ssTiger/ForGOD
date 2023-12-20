@@ -7,8 +7,12 @@ using static UserData;
 public class DataManager : MonoBehaviour
 {
     public static DataManager instance;
+    private UserData userData;
+    public GameData gameData; //아이템 데이터
+
 
     public UserStat play_data = new UserStat();
+
 
     public string path;//파일 경로
     public int nowSlot; //슬롯 번호
@@ -28,6 +32,7 @@ public class DataManager : MonoBehaviour
         #endregion
 
         path = Application.dataPath + "/PlayerDate"; // 경로 지정
+        userData = GetComponent<UserData>();
     }
 
     void Start()

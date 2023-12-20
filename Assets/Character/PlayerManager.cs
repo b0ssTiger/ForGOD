@@ -48,54 +48,11 @@ public class PlayerManager : MonoBehaviour
 
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
         
-        StartCoroutine(Action());
-        StartCoroutine(Shot());
+        
     }
    
     
-    IEnumerator Action()
-    {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            animator.SetTrigger("Slash");
-        }
-
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            animator.SetTrigger("Item");
-            Instantiate(ItemPrefab, ItenPoint.position, transform.rotation);
-        }
-                              
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            animator.SetTrigger("Damage");
-        }
-
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            animator.SetTrigger("Dead");
-            this.transform.position = new Vector2(0f, -0.12f);
-            for (var i = 0; i < 64; i++)
-            {
-                yield return null;
-            }
-            this.transform.position = Vector2.zero;
-        }
-    }
-    IEnumerator Shot()
-    {
-        
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            animator.SetTrigger("Bow");
-            for (var i = 0; i < 40; i++)
-            {
-                yield return null;
-            }
-            Instantiate(BowPrefab, Vector2.zero, Quaternion.identity, shotPointTransform);
-        }  
-       
-    }
+   
 }
 
 
