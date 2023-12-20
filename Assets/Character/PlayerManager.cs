@@ -7,19 +7,14 @@ using UnityEngine.UI;
 public class PlayerManager : MonoBehaviour
 {
     public Transform ItenPoint;
-    public Transform groundCheck;
     public GameObject ItemPrefab;
     public GameObject BowPrefab;
-    public LayerMask groundLayer;
     private Rigidbody2D rb;
     public Animator animator;
 
     public float Curhp;
     public float moveSpeed = 1f;
-    public float jumpForce = 10f;
-    public float groundCheckRadius = 0.2f;
 
-    public bool isGrounded;
 
     [SerializeField]
     private Transform shotPointTransform = null;
@@ -52,32 +47,12 @@ public class PlayerManager : MonoBehaviour
         moveDirection.Normalize();
 
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
-
-        if (Input.GetKeyDown(KeyCode.C) && isGrounded)
-        {
-            Jump();
-        }
         
         StartCoroutine(Action());
         StartCoroutine(Shot());
     }
-
-    void FixedUpdate()
-    {
-        // 땅에 닿았는지 검사
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-
-        // 자동으로 내려오기
-        if (!isGrounded)
-        {
-            // 여기에서는 간단하게 중력을 적용하여 자연스러운 떨어짐 효과를 구현합니다.
-            rb.velocity += Vector2.down * Physics2D.gravity.y * Time.fixedDeltaTime;
-        }
-    }
-    public void Jump()
-    {
-        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-    }
+   
+    
     IEnumerator Action()
     {
         if (Input.GetKeyDown(KeyCode.Z))

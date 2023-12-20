@@ -2,19 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 
 public class UserData : MonoBehaviour
 {
 
     public UserStat Player_Stats = new UserStat();
-
-    public Animator animator;    
+    public Animator animator;
     public Image Hpimage;
+    DataManager _Player;
+
 
     public void Start()
     {
 
+        _Player = DataManager.instance;
         Player_Stats.Maxhp = Player_Stats.Curhp;
         
     }
@@ -22,28 +25,33 @@ public class UserData : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(50f);
-        }
+       
        
     }
 
     public void Updatehp()
     {
-        float fillAmount = Player_Stats.Curhp / Player_Stats.Maxhp;
+        float fillAmount = _Player.play_data.Curhp / _Player.play_data.Maxhp;
         Hpimage.fillAmount = fillAmount; 
     }
 
-   
-    public void TakeDamage(float damage)
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Monster")
+        {
+            TakeDamage(10);
+        }
+    }
+
+
+            public void TakeDamage(float damage)
     {
         animator.SetTrigger("Damage");
-        Player_Stats.Curhp -= damage;
-        Player_Stats.Curhp = Mathf.Clamp(Player_Stats.Curhp, 0f, Player_Stats.Maxhp);
+        _Player.play_data.Curhp -= damage;
+        _Player.play_data.Curhp = Mathf.Clamp(_Player.play_data.Curhp, 0f, _Player.play_data.Maxhp);
         Updatehp();
         
-        if (Player_Stats.Curhp <= 0f) 
+        if (_Player.play_data.Curhp <= 0f) 
         {
             UserDie();
         }

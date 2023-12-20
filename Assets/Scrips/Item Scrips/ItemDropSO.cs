@@ -21,20 +21,12 @@ public class ItemDropSO : ScriptableObject
     {
         int sum = 0;
 
-        // 꽝 아이템 items[0]은 항상 50%를 유지하게 (필요없다면 밑 35번 줄도 지울것)
-        if (items[0].weight != 0)
-        {
-            items[0].weight = 0;
-        }
-
         foreach (var item in items)
         {
             sum += item.weight; // 리스트의 아이템 개수만큼 weight 값을 sum에 저장
         }
 
-        items[0].weight += sum;
-
-        float rnd = UnityEngine.Random.Range(0, sum); // 유니티 엔진 랜덤 + 아이템 확률
+        float rnd = UnityEngine.Random.Range(1, sum); // 유니티 엔진 랜덤 + 아이템 확률
 
         // 0번 배열의 아이템 부터 시작해서 item.weight 값이 rnd 보다 높다면 0번 아이템을 리턴
         // 아니라면 rnd -= item.weight 해서 다음 1번 item.weight 값이 rnd 보다 높다면 1번 아이템을....

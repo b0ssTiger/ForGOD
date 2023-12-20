@@ -178,6 +178,7 @@ MonoBehaviour:
   followDistance: 5
   hpbardistance: -0.6
   knockbackForce: 1
+  prefab: {fileID: 249191751934875763, guid: b97b68ad45a7fa4449e7419c74674b0b, type: 3}
 --- !u!95 &6944785954046483021
 Animator:
   serializedVersion: 5
