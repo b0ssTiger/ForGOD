@@ -7580,6 +7580,22 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3134145141962825568, guid: 914d390cc2e452f4685cc21841c32486, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538707513956790774, guid: 914d390cc2e452f4685cc21841c32486, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668822602618541273, guid: 914d390cc2e452f4685cc21841c32486, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5799796527762337809, guid: 914d390cc2e452f4685cc21841c32486, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6225597045846353642, guid: 914d390cc2e452f4685cc21841c32486, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -7624,9 +7640,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6466841073282146621, guid: 914d390cc2e452f4685cc21841c32486, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7391770091340708709, guid: 914d390cc2e452f4685cc21841c32486, type: 3}
       propertyPath: m_Name
       value: BossMonster
+      objectReference: {fileID: 0}
+    - target: {fileID: 7391770091340708709, guid: 914d390cc2e452f4685cc21841c32486, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8249502414358316958, guid: 914d390cc2e452f4685cc21841c32486, type: 3}
       propertyPath: m_SortingLayer
@@ -15793,7 +15817,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   userData: {fileID: 1443269103}
-  atkRange: 0.5
+  atkRange: 3
 --- !u!114 &1443269103
 MonoBehaviour:
   m_ObjectHideFlags: 0

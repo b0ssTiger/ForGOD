@@ -77,7 +77,6 @@ public class CloseMonster : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && !isKnockbackInProgress)
         {
-            TakeDamage(10);
 
             Vector3 knockbackDirection = (transform.position - collision.transform.position).normalized;
 

@@ -8,9 +8,16 @@ public class meleeAtk : MonoBehaviour
     public Transform attackPoint;
     public LayerMask enemyLayer;
     public UserData userData;
+    private CloseMonster enemy1;
+    private BossMonster enemy2;
 
-    public float atkRange = 0.5f; // 공격범위
+    public float atkRange = 2f; // 공격범위
 
+    private void Awake()
+    {
+        enemy1.GetComponent<CloseMonster>();
+        enemy2.GetComponent<BossMonster>();
+    }
     void Start()
     {
         
@@ -35,7 +42,11 @@ public class meleeAtk : MonoBehaviour
         // 각 적에 대해 데미지를 입힘
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<CloseMonster>().TakeDamage(MeleeDamage);
+            
+            enemy1.TakeDamage(MeleeDamage);
+            enemy2.TakeDamage(MeleeDamage);
+
+                   
         }
     }
 }
