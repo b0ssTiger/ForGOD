@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 19b391954df54d84d9fb65ffb70b4d96
+  - enabled: 1
+    path: Assets/Scenes/Doungeon/Dongeone Scnce_01.unity
+    guid: 909734d82e602084ab2c08257e42526a
+  - enabled: 1
+    path: Assets/Scenes/Doungeon/Dungeon_02.unity
+    guid: 20f9c2ab1414dc544a94d99b52094a3b
+  - enabled: 1
+    path: Assets/Scenes/Doungeon/Doungeon_03.unity
+    guid: bb26014b322982a4a850235022fbd638
   m_configObjects: {}
