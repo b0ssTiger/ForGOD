@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class meleeAtk : MonoBehaviour
 {
     public Animator animator;
     public Transform attackPoint;
     public LayerMask enemyLayer;
-    public UserData userData;
+    DataManager _Player;
 
     public float atkRange = 0.5f; // 공격범위
 
     void Start()
     {
-        
+        _Player = DataManager.instance;
     }
 
     // Update is called once per frame
@@ -30,7 +31,7 @@ public class meleeAtk : MonoBehaviour
     {
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, atkRange, LayerMask.GetMask("Enemy"));
 
-        int MeleeDamage = userData.Player_Stats.atk;
+        int MeleeDamage = _Player.play_data.atk;
 
         
         foreach (Collider2D enemy in hitEnemies)
