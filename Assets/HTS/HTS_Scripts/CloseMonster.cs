@@ -14,7 +14,9 @@ public class CloseMonster : MonoBehaviour
     public float followDistance;
     private Slider hpbar;
     public float hpbardistance;
-   
+    public float knockbackForce = 2f;
+    private bool isKnockbackInProgress = false;
+
 
 
     void Start()
@@ -36,8 +38,8 @@ public class CloseMonster : MonoBehaviour
 
     public void Move(Transform player)
     {
-        Vector3 direction = player.transform.position - transform.position;
-        direction.Normalize();
+        Vector2 direction = player.transform.position - transform.position;
+        direction = direction.normalized;
         transform.Translate(direction * speed * Time.deltaTime);
     }
 
@@ -60,19 +62,40 @@ public class CloseMonster : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && !isKnockbackInProgress)
         {
-            TakeDamage(10);         
+            TakeDamage(10);
+
+            Vector3 knockbackDirection = (transform.position - collision.transform.position).normalized;
+
+            // 넉백 힘을 가함
+            GetComponent<Rigidbody2D>().AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);          
+
+            Invoke("ResetKnockback", 1f);
+
+            // 넉백 진행 중 플래그 설정
+            isKnockbackInProgress = true;
         }
     }
 
+    private void ResetKnockback()
+    {
+        // 넉백 힘을 초기화
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+        // 넉백 진행 중 플래그 초기화
+        isKnockbackInProgress = false;
+    }
+
+
     void MonsterMove()
     {
-        float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
-       
-        if (distanceToPlayer <= followDistance)
+        Vector2 distanceToPlayer = player.transform.position - transform.position;
+
+        
+        if (distanceToPlayer.magnitude <= followDistance)
         {
-            Move(player.transform);
+            Move(player.transform);           
         }
         
     }
