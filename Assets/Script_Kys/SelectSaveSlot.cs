@@ -62,7 +62,7 @@ public class SelectSaveSlot : MonoBehaviour
             DataManager.instance.play_data.UserName = newPlayerName.text;
             DataManager.instance.SaveData();
         }
-        SceneManager.LoadScene("SampleScene_Kys");
+        SceneManager.LoadScene("MainScene");
     }
 
 }
