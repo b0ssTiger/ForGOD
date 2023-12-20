@@ -40,7 +40,7 @@ public class UserData : MonoBehaviour
    
     public void TakeDamage(float damage)
     {
-        
+        animator.SetTrigger("Damage");
         Curhp -= damage;
         Curhp = Mathf.Clamp(Curhp, 0f, Maxhp);
         Updatehp();
