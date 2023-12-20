@@ -25,7 +25,7 @@ public class SelectSaveSlot : MonoBehaviour
                 savefile[_count] = true;
                 DataManager.instance.nowSlot = _count;
                 DataManager.instance.LoadData();
-                slotText[_count].text = DataManager.instance.play_data.nickname; // 버튼에 닉네임 표시
+                slotText[_count].text = DataManager.instance.play_data.UserName; // 버튼에 닉네임 표시
             }
             else
             {
@@ -59,7 +59,7 @@ public class SelectSaveSlot : MonoBehaviour
     {
         if (!savefile[DataManager.instance.nowSlot])
         {
-            DataManager.instance.play_data.nickname = newPlayerName.text;
+            DataManager.instance.play_data.UserName = newPlayerName.text;
             DataManager.instance.SaveData();
         }
         SceneManager.LoadScene("SampleScene_Kys");

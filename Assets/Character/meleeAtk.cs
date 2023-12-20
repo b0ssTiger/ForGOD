@@ -7,7 +7,7 @@ public class meleeAtk : MonoBehaviour
     public Animator animator;
     public Transform attackPoint;
     public LayerMask enemyLayer;
-    public UserData userData;
+    public UserStat userData;
 
     public float atkRange = 0.5f; // 공격범위
 
