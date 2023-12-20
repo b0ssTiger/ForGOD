@@ -32,10 +32,21 @@ public class meleeAtk : MonoBehaviour
 
         int MeleeDamage = userData.Player_Stats.atk;
 
-        // 각 적에 대해 데미지를 입힘
+        
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<CloseMonster>().TakeDamage(MeleeDamage);
+            BossMonster bossMonster = enemy.GetComponent<BossMonster>();
+            CloseMonster closeMonster = enemy.GetComponent<CloseMonster>();
+
+           
+            if (bossMonster != null)
+            {
+                bossMonster.TakeDamage(MeleeDamage);
+            }
+            else if (closeMonster != null)
+            {
+                closeMonster.TakeDamage(MeleeDamage);
+            }
         }
     }
 }

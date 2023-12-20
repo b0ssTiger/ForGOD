@@ -16,6 +16,7 @@ public class CloseMonster : MonoBehaviour
     public float hpbardistance;
     public float knockbackForce = 2f;
     private bool isKnockbackInProgress = false;
+    [SerializeField] private GameObject prefab;
 
 
 
@@ -51,10 +52,22 @@ public class CloseMonster : MonoBehaviour
 
         if (currentHp <= 0)
         {
+            float rnd = Random.Range(0, 9);
+            if (rnd >= 8)
+            {
+                ItemChaetDrop(transform.position);
+            }
             Die();
         }
     }
-
+    public void ItemChaetDrop(Vector3 pos)
+    {
+        if (prefab == null)
+        {
+            return;
+        }
+        Instantiate(prefab, pos, Quaternion.identity);
+    }
     public void Die()
     {
         Destroy(gameObject);
@@ -64,7 +77,6 @@ public class CloseMonster : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && !isKnockbackInProgress)
         {
-            TakeDamage(10);
 
             Vector3 knockbackDirection = (transform.position - collision.transform.position).normalized;
 
@@ -77,7 +89,7 @@ public class CloseMonster : MonoBehaviour
             isKnockbackInProgress = true;
         }
     }
-
+    
     private void ResetKnockback()
     {
         // ≥ÀπÈ »˚¿ª √ ±‚»≠

@@ -178,6 +178,7 @@ MonoBehaviour:
   followDistance: 5
   hpbardistance: -0.8
   knockbackForce: 1
+  prefab: {fileID: 249191751934875763, guid: b97b68ad45a7fa4449e7419c74674b0b, type: 3}
 --- !u!95 &6135834943748246300
 Animator:
   serializedVersion: 5
@@ -611,5 +612,5 @@ Transform:
   m_Children:
   - {fileID: 6547438532789480360}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
