@@ -9,12 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/FirstGameScene.unity
     guid: 713c3ce6c06a4e04383b4addba48424f
   - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: 19b391954df54d84d9fb65ffb70b4d96
+  - enabled: 1
     path: Assets/Scenes/SelectUserScene.unity
     guid: 8b67f7de8598a734cb194baba0f09ae9
   - enabled: 1
     path: Assets/Scenes/SampleScene_Kys.unity
     guid: 3e320cbd265a8ad4799f96717be6fe6c
-  - enabled: 1
-    path: Assets/Scenes/MainScene.unity
-    guid: 19b391954df54d84d9fb65ffb70b4d96
   m_configObjects: {}
