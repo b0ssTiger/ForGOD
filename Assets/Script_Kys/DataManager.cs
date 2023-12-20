@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using static UserData;
 
 public class DataManager : MonoBehaviour
 {
     public static DataManager instance;
 
-    public User_Data play_data = new User_Data();
+    public UserStat play_data = new UserStat();
 
     public string path;//파일 경로
     public int nowSlot; //슬롯 번호
@@ -26,7 +27,7 @@ public class DataManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         #endregion
 
-        path = Application.persistentDataPath + "/save"; // 경로 지정
+        path = Application.dataPath + "/PlayerDate"; // 경로 지정
     }
 
     void Start()
@@ -36,19 +37,19 @@ public class DataManager : MonoBehaviour
 
     public void SaveData()
     {
-        string data = JsonUtility.ToJson(play_data);
+        string data = JsonUtility.ToJson(play_data,true);
         File.WriteAllText(path + nowSlot, data);
     }
     public void LoadData()
     {
         string data = File.ReadAllText(path + nowSlot);
-        play_data = JsonUtility.FromJson<User_Data>(data);
+        play_data = JsonUtility.FromJson<UserStat>(data);
     }
 
     public void DataClear()
     {
         nowSlot = -1;
-        play_data = new User_Data();
+        play_data = new UserStat();
     }
 
 }

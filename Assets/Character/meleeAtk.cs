@@ -30,7 +30,7 @@ public class meleeAtk : MonoBehaviour
     {
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, atkRange, LayerMask.GetMask("Enemy"));
 
-        int MeleeDamage = userData.atk;
+        int MeleeDamage = userData.Player_Stats.atk;
 
         // 각 적에 대해 데미지를 입힘
         foreach (Collider2D enemy in hitEnemies)

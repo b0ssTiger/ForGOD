@@ -643,10 +643,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d04f9383c7f344cae6d9929fa52517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UserName: cola
-  Maxhp: 100
-  Curhp: 100
-  atk: 10
   animator: {fileID: 1820603450}
   Hpimage: {fileID: 100393246}
 --- !u!114 &1820603455
@@ -812,6 +808,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1959512401, guid: 7465ef4f8274330419bdc1abe808b291, type: 3}
+    - target: {fileID: 2989262492310327135, guid: 103d19a1ab2640d45b46564a8829f7db, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ItemData", menuName = "Item/ItemData/ItemDefault", order = 0)]
@@ -18,7 +19,9 @@ public class ItemSO : ScriptableObject
 
     public List<STAT> stats = new List<STAT>();
 
-    public bool Equip; // 장착 가능 여부
+    public bool equip; // 이 아이템이 장비면 true ,소모품이면 false
+    public bool isEquiped; // 장비라면 장착 일시 true, 장착 안할시 false
+
     public int maxStack; // 최대 개수
     public int minLevel; // 최소 레벨
 
