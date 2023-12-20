@@ -6,24 +6,23 @@ using UnityEngine.UI;
 
 public class Play_HpBar : MonoBehaviour
 {
-    public Slider Hpbar;
+    [SerializeField]
+    Slider Hpbar;
 
-    private float curHealth;
-    private float maxHealth;
+    DataManager _Player;
 
-    public DataManager _Player;
-
-    public void SetHp()
+    public void Start()
     {
-        curHealth = _Player.play_data.Curhp;
-        maxHealth = _Player.play_data.Maxhp;
+        _Player = DataManager.instance;
     }
 
-    public void CheckHp()
+   
+
+    public void LateUpdate()
     {
         if(Hpbar != null)
         {
-            Hpbar.value = curHealth / maxHealth;
+            Hpbar.value = _Player.play_data.Curhp / _Player.play_data.Maxhp;
         }
     }
     
