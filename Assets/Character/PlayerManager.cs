@@ -7,15 +7,19 @@ using UnityEngine.UI;
 public class PlayerManager : MonoBehaviour
 {
     public Transform ItenPoint;
-    public Transform ShotPoint;
+    public Transform groundCheck;
     public GameObject ItemPrefab;
     public GameObject BowPrefab;
+    public LayerMask groundLayer;
+    private Rigidbody2D rb;
+    public Animator animator;
 
     public float Curhp;
-
-    Rigidbody2D rb;
-    Animator animator;
     public float moveSpeed = 1f;
+    public float jumpForce = 10f;
+    public float groundCheckRadius = 0.2f;
+
+    public bool isGrounded;
 
     [SerializeField]
     private Transform shotPointTransform = null;
@@ -31,10 +35,8 @@ public class PlayerManager : MonoBehaviour
     void Update()
     {
         float x = Input.GetAxisRaw("Horizontal");
-        float y = (x == 0) ? Input.GetAxisRaw("Vertical") : 0.0f;
-        
-
-        
+        float y = Input.GetAxisRaw("Vertical");
+              
         if (x != 0 || y != 0)
         {
             animator.SetFloat("x", x);
@@ -46,18 +48,35 @@ public class PlayerManager : MonoBehaviour
             animator.SetBool("Walk", false);
         }
 
-        Vector3 moveDirection = new Vector3(x, y, 0f).normalized;
+        Vector2 moveDirection = new Vector2(x, y);
+        moveDirection.Normalize();
 
-        // 이동 벡터가 0이 아닐 때만 이동 처리
-        if (moveDirection.magnitude >= 0.1f)
+        rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+
+        if (Input.GetKeyDown(KeyCode.C) && isGrounded)
         {
-            // 플레이어 이동
-            float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
-            transform.position += moveDirection * moveSpeed * Time.deltaTime;
+            Jump();
         }
-
+        
         StartCoroutine(Action());
         StartCoroutine(Shot());
+    }
+
+    void FixedUpdate()
+    {
+        // 땅에 닿았는지 검사
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+
+        // 자동으로 내려오기
+        if (!isGrounded)
+        {
+            // 여기에서는 간단하게 중력을 적용하여 자연스러운 떨어짐 효과를 구현합니다.
+            rb.velocity += Vector2.down * Physics2D.gravity.y * Time.fixedDeltaTime;
+        }
+    }
+    public void Jump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
     }
     IEnumerator Action()
     {
