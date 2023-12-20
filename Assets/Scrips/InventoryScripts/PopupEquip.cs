@@ -10,22 +10,30 @@ public class PopupEquip : MonoBehaviour
     public Button confirmBtn;
 
 
-    public void PopupSetting(Items data)
+    public void PopupSetting(ItemSlot slot)
     {
-        if (data.equip == true)
+        if (slot.inputData.isEquiped == true)
         {
-            if (data.isEquiped)
+            if (slot.inputData.isEquiped)
             {
                 infoText.text = "장착을 해제하시겠습니까?";
                 confirmBtn.onClick.RemoveAllListeners();
-                confirmBtn.onClick.AddListener(() => { data.isEquiped = false; });
-
+                confirmBtn.onClick.AddListener(() => 
+                {
+                    slot.inputData.isEquiped = false;
+                    slot.ChangeEquip();
+                });
+                
             }
             else
             {
                 infoText.text = "장착 하시겠습니까?";
                 confirmBtn.onClick.RemoveAllListeners();
-                confirmBtn.onClick.AddListener(() => { data.isEquiped = true; });
+                confirmBtn.onClick.AddListener(() => 
+                {
+                    slot.inputData.isEquiped = true;
+                    slot.ChangeEquip();
+                });
             }
         }
     }
