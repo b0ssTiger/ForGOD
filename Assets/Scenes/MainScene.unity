@@ -17897,7 +17897,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1443269099}
   Hpimage: {fileID: 396988239}
-  PlayerInterface_Hpbar: {fileID: 1850665904}
 --- !u!61 &1443269104
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24095,6 +24094,7 @@ GameObject:
   - component: {fileID: 1879945417}
   - component: {fileID: 1879945416}
   - component: {fileID: 1879945415}
+  - component: {fileID: 1879945418}
   m_Layer: 5
   m_Name: PlayerInterface
   m_TagString: Untagged
@@ -24188,6 +24188,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1879945418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879945413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e1dbfeb2d04e3840a7b4e3986cde9a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hpbar: {fileID: 1850665904}
 --- !u!1 &1881401765
 GameObject:
   m_ObjectHideFlags: 0
