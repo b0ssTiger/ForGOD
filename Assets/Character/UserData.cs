@@ -61,7 +61,7 @@ public class UserData : MonoBehaviour
     public void UserDie()
     {
         animator.SetTrigger("Dead");
-        SceneManager.LoadScene("FirstGameScene");
+        Invoke("asd", 5f);
     }
 
     public class UserStat
@@ -70,5 +70,10 @@ public class UserData : MonoBehaviour
         public float Maxhp = 100f;
         public float Curhp = 100f;
         public int atk = 10;
+    }
+
+    void asd()
+    {
+        SceneManager.LoadScene("FirstGameScene");
     }
 }
