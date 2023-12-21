@@ -13,6 +13,7 @@ public class Play_HpBar : MonoBehaviour
 
     public void Start()
     {
+        Hpbar.value = 1;
         _Player = DataManager.instance;
     }
 
@@ -20,7 +21,8 @@ public class Play_HpBar : MonoBehaviour
 
     public void LateUpdate()
     {
-        if(Hpbar != null)
+        
+        if(Hpbar != null && _Player != null)
         {
             Hpbar.value = _Player.play_data.Curhp / _Player.play_data.Maxhp;
         }

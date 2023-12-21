@@ -43,10 +43,12 @@ public class meleeAtk : MonoBehaviour
             if (bossMonster != null)
             {
                 bossMonster.TakeDamage(MeleeDamage);
+                Debug.Log("맞았다.");
             }
             else if (closeMonster != null)
             {
                 closeMonster.TakeDamage(MeleeDamage);
+                Debug.Log("맞았다.");
             }
         }
     }
