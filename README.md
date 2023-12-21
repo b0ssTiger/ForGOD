@@ -54,4 +54,5 @@
 ![image](https://github.com/b0ssTiger/ForGOD/assets/120788949/cc7218a4-b22d-4798-80b8-a37a45c0f68d)
 
 ## 후기
- - PPT에서 
+ ![image](https://github.com/b0ssTiger/ForGOD/assets/149444342/133a1b72-8d1f-4c7e-b361-aeb5d8c84f44)
+
